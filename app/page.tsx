@@ -1,5 +1,5 @@
-import Link from "next/link"
-import Image from "next/image"
+import Link from "next/link";
+import Image from "next/image";
 import {
   Droplet,
   HeartHandshake,
@@ -9,15 +9,15 @@ import {
   Bell,
   ArrowRight,
   ShieldCheck,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const STATS = [
   { value: "12", label: "Major Partner Hospitals" },
   { value: "45", label: "Active Requests Today" },
   { value: "8,300+", label: "Registered Donors" },
   { value: "47", label: "Counties Covered" },
-]
+];
 
 const STEPS = [
   {
@@ -35,11 +35,11 @@ const STEPS = [
     title: "Donate & Save a Life",
     body: "Connect with the requesting hospital, confirm your visit, and give the gift of life to a Kenyan in need.",
   },
-]
+];
 
 export default function HomePage() {
   return (
-    <>
+    <div className="min-h-screen bg-background text-foreground">
       {/* Hero */}
       <section className="relative overflow-hidden bg-card">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-8 lg:py-24">
@@ -49,31 +49,34 @@ export default function HomePage() {
               Kenya&apos;s Blood Donor Network
             </span>
             <h1 className="mt-5 text-pretty text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              Connecting Donors, <span className="text-primary">Saving Kenyan Lives</span>
+              Connecting Donors,{" "}
+              <span className="text-primary">Saving Kenyan Lives</span>
             </h1>
             <p className="mt-5 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">
-              Every two seconds someone needs blood. BloodLinks bridges the gap between
-              willing donors and patients in urgent need across major hospitals in Nairobi,
-              Mombasa, Kisumu and beyond.
+              Every two seconds someone needs blood. BloodLinks bridges the gap
+              between willing donors and patients in urgent need across major
+              hospitals in Nairobi, Mombasa, Kisumu and beyond.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button render={<Link href="/find-blood" />} size="lg" className="gap-2 px-5">
-                <Search className="size-4" />
-                Request Blood
-              </Button>
-              <Button
-                render={<Link href="/become-donor" />}
-                size="lg"
-                variant="outline"
-                className="gap-2 px-5"
+            <div className="flex flex-wrap gap-4 justify-center mt-8">
+              <Link
+                href="/find-blood"
+                className="inline-flex items-center justify-center rounded-md font-medium transition-colors bg-red-600 text-white hover:bg-red-700 h-11 px-8 text-sm gap-2"
               >
-                <Droplet className="size-4" />
+                Request Blood
+              </Link>
+
+              <Link
+                href="/become-donor"
+                className="inline-flex items-center justify-center rounded-md font-medium transition-colors border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 h-11 px-8 text-sm gap-2"
+              >
                 Donate Now
-              </Button>
+              </Link>
             </div>
+
             <div className="mt-8 flex items-center gap-2 text-sm text-muted-foreground">
               <ShieldCheck className="size-4 text-success" />
-              Verified in partnership with the Kenya National Blood Transfusion Service
+              Verified in partnership with the Kenya National Blood Transfusion
+              Service
             </div>
           </div>
 
@@ -93,8 +96,12 @@ export default function HomePage() {
                 <HeartHandshake className="size-6" />
               </span>
               <div>
-                <p className="text-lg font-bold leading-none text-foreground">1,240</p>
-                <p className="text-xs text-muted-foreground">Lives saved this year</p>
+                <p className="text-lg font-bold leading-none text-foreground">
+                  1,240
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Lives saved this year
+                </p>
               </div>
             </div>
           </div>
@@ -113,7 +120,9 @@ export default function HomePage() {
                 <p className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
                   {s.value}
                 </p>
-                <p className="mt-1.5 text-sm text-muted-foreground">{s.label}</p>
+                <p className="mt-1.5 text-sm text-muted-foreground">
+                  {s.label}
+                </p>
               </div>
             ))}
           </div>
@@ -127,8 +136,8 @@ export default function HomePage() {
             How BloodLinks Works
           </h2>
           <p className="mt-4 text-pretty text-lg text-muted-foreground">
-            A simple, transparent process that gets blood to patients faster — for both
-            donors and those in need.
+            A simple, transparent process that gets blood to patients faster —
+            for both donors and those in need.
           </p>
         </div>
 
@@ -144,7 +153,9 @@ export default function HomePage() {
               <span className="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
                 <step.icon className="size-6" />
               </span>
-              <h3 className="mt-5 text-lg font-semibold text-foreground">{step.title}</h3>
+              <h3 className="mt-5 text-lg font-semibold text-foreground">
+                {step.title}
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {step.body}
               </p>
@@ -161,30 +172,27 @@ export default function HomePage() {
             Your blood type could be the one someone is searching for right now
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-pretty text-lg text-primary-foreground/85">
-            Join thousands of Kenyans making a difference. It only takes a few minutes to
-            register and could save up to three lives.
+            Join thousands of Kenyans making a difference. It only takes a few
+            minutes to register and could save up to three lives.
           </p>
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <Button
-              render={<Link href="/become-donor" />}
-              size="lg"
-              variant="secondary"
-              className="gap-2 px-5"
+          <div className="mt-8 flex flex-col justify-center sm:flex-row gap-4">
+            <Link
+              href="/become-donor"
+              className="inline-flex items-center justify-center rounded-md font-medium text-sm transition-colors bg-red-600 text-white shadow hover:bg-red-700 h-10 px-6"
             >
-              Become a Donor
-              <ArrowRight className="size-4" />
-            </Button>
-            <Button
-              render={<Link href="/hospital-partners" />}
-              size="lg"
-              variant="outline"
-              className="border-primary-foreground/30 bg-transparent px-5 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              Register as a Donor
+            </Link>
+            <Link
+              href="/find-blood"
+              className="inline-flex items-center justify-center rounded-md font-medium text-sm transition-colors border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 h-10 px-6"
             >
-              View Partner Hospitals
-            </Button>
+              Find Blood Requests
+            </Link>
+            return (
+            <div className="min-h-screen bg-background text-foreground">)</div>
           </div>
         </div>
       </section>
-    </>
-  )
+    </div>
+  );
 }

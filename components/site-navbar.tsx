@@ -55,7 +55,7 @@ export function SiteNavbar() {
         </div>
 
         <div className="hidden md:block">
-          <Button nativeButton={false} size="lg" className="gap-1.5 shadow-sm">
+          <Button nativeButton={true} size="lg" className="gap-1.5 shadow-sm">
             <Link href="/find-blood">
               <Siren className="size-4" />
               Urgent Request
@@ -96,7 +96,7 @@ export function SiteNavbar() {
               );
             })}
             <Button
-              nativeButton={false}
+              nativeButton={true}
               size="lg"
               className="mt-2 w-full gap-1.5"
               onClick={() => setOpen(false)}
